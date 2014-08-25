@@ -17,7 +17,19 @@ public class AudioPlayer {
     }
 
     public void play(Context c) {
+        // prevent creation of multiple media players.
+        stop();
+
         mPlayer = MediaPlayer.create(c, R.raw.one_small_step);
+
+        // as soon as playback is done, call stop to release media player
+        mPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mediaPlayer) {
+                stop();
+            }
+        });
+
         mPlayer.start();
     }
 }
