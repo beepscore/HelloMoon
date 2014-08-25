@@ -12,6 +12,7 @@ import android.widget.Button;
  */
 public class HelloMoonFragment extends Fragment {
 
+    private AudioPlayer mPlayer = new AudioPlayer();
     private Button mPlayButton;
     private Button mStopButton;
 
@@ -24,5 +25,11 @@ public class HelloMoonFragment extends Fragment {
         mStopButton = (Button)v.findViewById(R.id.hellomoon_stopButton);
 
         return v;
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        mPlayer.stop();
     }
 }
