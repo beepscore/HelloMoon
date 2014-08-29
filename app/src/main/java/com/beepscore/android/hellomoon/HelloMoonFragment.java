@@ -13,6 +13,7 @@ import android.widget.Button;
 public class HelloMoonFragment extends Fragment {
 
     private AudioPlayer mPlayer = new AudioPlayer();
+    private Button mPauseButton;
     private Button mPlayButton;
     private Button mStopButton;
 
@@ -20,6 +21,13 @@ public class HelloMoonFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup parent,
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_hello_moon, parent, false);
+
+        mPauseButton = (Button)v.findViewById(R.id.hellomoon_pauseButton);
+        mPauseButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                mPlayer.pause();
+            }
+        });
 
         mPlayButton = (Button)v.findViewById(R.id.hellomoon_playButton);
         mPlayButton.setOnClickListener(new View.OnClickListener() {
