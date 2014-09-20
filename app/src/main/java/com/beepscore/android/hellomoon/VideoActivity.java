@@ -21,7 +21,7 @@ public class VideoActivity extends Activity {
         setContentView(R.layout.activity_video);
         if (savedInstanceState == null) {
             getFragmentManager().beginTransaction()
-                    .add(R.id.container, new PlaceholderFragment())
+                    .add(R.id.container, new VideoFragment())
                     .commit();
         }
     }
@@ -49,9 +49,9 @@ public class VideoActivity extends Activity {
     /**
      * A placeholder fragment containing a simple view.
      */
-    public static class PlaceholderFragment extends Fragment {
+    public static class VideoFragment extends Fragment {
 
-        public PlaceholderFragment() {
+        public VideoFragment() {
         }
 
         @Override
