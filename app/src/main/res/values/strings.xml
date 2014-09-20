@@ -9,5 +9,7 @@
     <string name="hellomoon_stop">Stop</string>
     <string name="hellomoon_description">Neil Armstrong stepping onto the moon</string>
     <string name="title_activity_video">VideoActivity</string>
+    <string name="action_video">Video</string>
+    <string name="action_audio">Audio</string>
 
 </resources>
