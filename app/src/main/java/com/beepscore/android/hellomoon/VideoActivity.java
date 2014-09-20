@@ -3,22 +3,33 @@ package com.beepscore.android.hellomoon;
 import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.MediaController;
+import android.widget.VideoView;
 
 
+// http://stackoverflow.com/questions/2961749/mediacontroller-with-mediaplayer
+// http://www.techotopia.com/index.php/Implementing_Video_Playback_on_Android_using_the_VideoView_and_MediaController_Classes
 public class VideoActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_video);
-        if (savedInstanceState == null) {
-            getFragmentManager().beginTransaction()
-                    .add(R.id.container, new VideoFragment())
-                    .commit();
-        }
+
+        VideoView videoView = (VideoView) findViewById(R.id.video_view);
+        MediaController mediaController = new MediaController(this);
+        mediaController.setAnchorView(videoView);
+        videoView.setMediaController(mediaController);
+        // Set video link (mp4 format )
+        Uri video = Uri.parse("android.resource://" +
+        "com.beepscore.android.hellomoon/raw/apollo_17_stroll");
+        videoView.setVideoURI(video);
+        //videoView.setVideoPath("@raw/apollo_17_stroll.mpg");
+        videoView.start();
     }
 
     @Override

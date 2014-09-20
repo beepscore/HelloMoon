@@ -11,5 +11,6 @@
     <string name="title_activity_video">VideoActivity</string>
     <string name="action_video">Video</string>
     <string name="action_audio">Audio</string>
+    <string name="video_description">video</string>
 
 </resources>
