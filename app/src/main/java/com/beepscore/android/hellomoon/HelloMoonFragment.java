@@ -18,6 +18,14 @@ public class HelloMoonFragment extends Fragment {
     private Button mStopButton;
 
     @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        // retain fragment. When user rotates device, activity will be destroyed
+        // but fragment instance with audio player will be passed to new activity.
+        setRetainInstance(true);
+    }
+
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup parent,
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_hello_moon, parent, false);
