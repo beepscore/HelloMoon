@@ -15,7 +15,6 @@ public class HelloMoonActivity extends FragmentActivity {
         setContentView(R.layout.activity_hello_moon);
     }
 
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -39,4 +38,5 @@ public class HelloMoonActivity extends FragmentActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
 }
