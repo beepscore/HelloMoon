@@ -28,7 +28,6 @@ public class VideoActivity extends Activity {
         Uri video = Uri.parse("android.resource://" +
         "com.beepscore.android.hellomoon/raw/apollo_17_stroll");
         videoView.setVideoURI(video);
-        //videoView.setVideoPath("@raw/apollo_17_stroll.mpg");
         videoView.start();
     }
 
