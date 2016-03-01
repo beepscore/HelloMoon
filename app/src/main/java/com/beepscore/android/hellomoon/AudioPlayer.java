@@ -36,7 +36,9 @@ public class AudioPlayer {
     }
 
     public void pause() {
+        if (mPlayer != null) {
             mPlayer.pause();
+        }
     }
 
 }
